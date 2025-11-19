@@ -198,3 +198,7 @@ allure serve allure-results
 - pip (менеджер пакетов Python)
 - Git
 
+  Ссылка на финальный проект:
+
+  https://ucheba1-.yonote.ru/doc/finalnyj-proekt-SWr3nMHm0r
+

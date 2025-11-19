@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -49,7 +50,6 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-cover/
 
 # Translations
 *.mo
@@ -72,7 +72,6 @@ instance/
 docs/_build/
 
 # PyBuilder
-.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -83,9 +82,7 @@ profile_default/
 ipython_config.py
 
 # pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
@@ -94,27 +91,8 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
+# celery beat schedule file
 celerybeat-schedule
-celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
@@ -146,45 +124,21 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#  JetBrains IDE
-.idea/
-*.iws /
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# Screenshots and debug images
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-cart_debug.png
-screenshot*.png
-
 # Allure reports
 allure-report/
 allure-results/
-.test-results/
+*.json
+*.txt
+*.zip
 
-# Selenium
-webdriver/
-geckodriver.log
-chromedriver.log
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Log files
-*.log
-logs/
-
-# OS generated files
+# OS
 .DS_Store
 .DS_Store?
 ._*
@@ -193,51 +147,158 @@ logs/
 ehthumbs.db
 Thumbs.db
 
-# Windows
-Thumbs.db
-ehthumbs.db
+# Logs
+*.log
+logs/
 
-# Folder config file
-Desktop.ini
+# Screenshots
+screenshots/
+*.png
+*.jpg
+*.jpeg
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Selenium
+webdriver/
+drivers/
+*.exe
+
+# Test reports
+report.html
+pytest-report.html
+test-results/
+reports/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Configuration files (except our settings)
+config/local/
+config/development.py
+config/production.py
+
+# Database files
+*.db
+*.sqlite
+
+# ChromeDriver
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Virtual environments
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Package files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Local History for Visual Studio Code
+.history/
 
 # Windows Installer files
 *.cab
 *.msi
-*.msix
 *.msm
 *.msp
 
 # Windows shortcuts
 *.lnk
 
-# Temporary files
-*.tmp
-*.temp
-
-# Virtual environments
-venv/
-ENV/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Test results
-.pytest_cache/
-test-results/
-reports/
-*.xml
-*.html
-
-# Environment variables
-.env
-.env.local
-
-# Chrome driver (if downloaded automatically)
-chromedriver*
-geckodriver*
+# End of https://www.toptal.com/developers/gitignore/api/python,pycharm,vscode
